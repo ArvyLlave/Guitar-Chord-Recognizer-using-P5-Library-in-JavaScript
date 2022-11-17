@@ -1,0 +1,213 @@
+body{
+	font-family: robotoslab ,monospace, sans-serif, serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.backgroundlayer{
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left:0;
+    z-index: -1;
+    background: url('bg.jpg') #ffefa7;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    transition: 1s ease; /*smoothen the transistion in 1 second duration*/
+}
+#btn{
+  font-size:18px;
+  font-family: inherit;
+  padding: 10px;
+  border: 0px;
+  border-radius:50%;
+  background-color:#ffefa7;
+  cursor:pointer;
+}
+.scaleup{ /* this class is added using javascript (element.classList.togglen')). called when the mic button is clicked */
+    /*this will increase the size of the background*/
+    transform: scale(1.2);
+    
+    /*for other browsers if the above code doesn't work*/ 
+    -webkit-transform: scale(1.2); 
+    -moz-transform: scale(1.2); 
+}
+.scaledown{
+    transform: scale(.9); 
+    -webkit-transform: scale(.9); 
+    -moz-transform: scale(.9); 
+}
+
+@font-face{
+    font-family: 'robotoslab';
+    src: url('roboto.ttf');
+}
+
+.blue{
+    background: skyblue;
+}
+
+.red{
+    background: orange;
+}
+
+.flex{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.chordname{
+    font-size: 5em;
+    margin: 0;
+    top: -30px;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.container{
+    width: 35%;
+    background: rgba(255,239,168,.7);
+    border-radius: 20px;
+  position: relative;
+    padding: 80px 0px 60px 0px;
+    text-align: center;
+    box-shadow: 0 0 25px 5px rgba(0,0,0,.6);
+    height: 350px;
+  
+    transition: 1s ease; /*smoothen the transistion in 1 second duration*/
+}
+
+.title{
+    position: relative;
+    top: -20px;
+    color: white;
+}
+
+.center {
+	border-radius: 50%;
+	width: 130px;
+	height: 130px;
+	border: none;
+	cursor: pointer;
+	background-color: #61b0db;
+}
+
+.center:hover{
+	padding: 15px;
+	opacity: .9;
+}
+
+#mic{
+	height: 100px;
+    opacity: .5;
+}
+#indicator{
+  width: 30px;
+  height: 30px;
+  background: orange;
+  position: absolute;
+  top: 40px;
+  border-radius: 50%;
+  right: 50px;
+}
+.micdisappear{
+    display: none;
+}
+
+#guitar{
+	height: 79px;
+    position: relative;
+}
+#chordname{
+  position: absolute;
+  margin: auto;
+  left:0;
+  right: 0;
+  margin-top: 35px;
+  padding: 0px;
+  font-size: 40px;
+  color:white;
+}
+#result{
+  font-size: 1em;
+}
+
+/* responsive container*/
+@media screen and (max-width: 1024px) {
+  .container{
+    width: 50%;
+  }
+}
+@media screen and (max-width: 950px) {
+  .container {
+    width: 70%;
+  }
+}
+@media screen and (max-width: 820px) {
+  .container {
+    width: 90%;
+  }
+}
+
+
+/* animated bars css*/
+.cont{
+	display: none;
+	width: 100%;
+	justify-content: center;
+	align-items: center;
+}
+.contflex{
+	display: flex;
+}
+
+.bar{
+	width: 10px;
+	height: 10px;
+	margin: 0px 5px 0px 5px;
+	border-radius: 50px;
+	background-color: #fff;
+}
+.bar2{
+	animation: middle 1s ease infinite;
+}
+.bar3{
+	animation: side .4s ease infinite;
+}
+.bar1{
+	animation: side .6s ease infinite;
+}
+
+@keyframes side{
+	0%{
+		height: 5px;
+	}
+	50%{
+		height: 30px;
+	}
+	100%{
+		height: 5px;
+	}
+}
+
+@keyframes middle{
+	0%{
+		height: 5px;
+	}
+	50%{
+		height: 70px;
+	}
+	100%{
+		height: 5px;
+	}
+}
+
